@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+		<script>
+			var provinces = [
+			["清远市","东莞市","广州市"],
+			["南阳市","郑州市","驻马店"],
+			["长沙市","湘潭市","益阳市"],
+			["厦门市","福州市","泉州市"]
+			];
+			//确定函数：onchange
+			function selectp(){
+				var province = document.getElementById("province");
+				var value = province.value;
+				var cities = provinces[value];
+				var cityselect = document.getElementById("city");
+				cityselect.options.length = 0;//清空select中的options
+				for(var i = 0; i < cities.length; i++){
+					var citytext = cities[i];
+					var option1 = document.createElement("option");
+					var textnode = document.createTextNode(citytext);
+					option1.appendChild(textnode);					
+					cityselect.appendChild(option1);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select id="province">
+			<option value="-1">--请选择--</option>
+			<option value="0">广东省</option>
+			<option value="1">河南省</option>
+			<option value="2">湖南省</option>
+			<option value="3">福建省</option>
+		</select>
+		<select id="city">
+			
+		</select>
+	</body>
+</html>
